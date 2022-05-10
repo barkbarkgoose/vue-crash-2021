@@ -1,5 +1,7 @@
 # --- project specific ---
 db.json
+package-lock.json
+package.json
 
 # Logs
 logs
