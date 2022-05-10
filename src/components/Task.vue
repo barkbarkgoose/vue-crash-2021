@@ -1,5 +1,9 @@
 <template>
-  <div @dblclick="$emit('toggle-reminder', task.id)" :class="[task.reminder ? 'reminder' : '', 'task']">
+  <div 
+    @dblclick="$emit('toggle-reminder', task.id)" 
+    :class="[task.reminder ? 'reminder' : '', 'task']"
+    class="noselect"
+  >
     <h3>
       {{ task.text }}
       <i @click="$emit('delete-task', task.id)" class="fas fa-times grow"></i>
@@ -28,6 +32,16 @@ export default {
 
   .grow:hover { 
     transform: scale(1.5); 
+  }
+
+  .noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
   }
 
   .task {
